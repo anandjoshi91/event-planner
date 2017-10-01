@@ -1,0 +1,12 @@
+Event Planner
+
+- Pages
+    - Welcome
+        - About this + Button to Create event page
+    - Create Event
+        - What is this event about ?
+        - When is it ? - provide options
+    - Vote
+        - add name and vote
+        - show best choice based on votes
+

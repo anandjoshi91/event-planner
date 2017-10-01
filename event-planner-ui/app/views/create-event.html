@@ -1,0 +1,58 @@
+<div ng-controller="CreateEventCtrl">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>What's on your mind ?</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="control-label" for="event">Event</label>
+                <input ng-model="eventName" name="eventName" type="text" placeholder="name your event" class="form-control input-md">
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="control-label" for="description">Description</label>
+                <textarea class="form-control" ng-model="description" placeholder="Tell your friends more about this event..." name="description"></textarea>
+            </div>
+
+            <!-- Preferences text box -->
+            <div ng-repeat="pref in getDateOptions()">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" value="{{pref}}" class="form-control input-md" readonly />
+                        <span class="input-group-btn">
+                                <button ng-click="delPref(pref)" class="btn btn-danger">delete</button>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date time picker -->
+            <div class="form-group">
+                <div class="input-group date">
+                    <input class="form-control" datetimepicker ng-model="preference" />
+                    <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    <span class="input-group-btn">
+                                <button ng-click="addPref(preference)" class="btn btn-primary">add preference</button>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group">
+                <div class="btn-group">
+                    <button ng-click="createEvent()" class="btn btn-success">create event</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+
+</div>
